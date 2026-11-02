@@ -1,0 +1,80 @@
+{
+  "manifest_version": 3,
+  "name": "Multipass — мультиаккаунты, куки и прокси",
+  "short_name": "Multipass",
+  "version": "1.1.0",
+  "description": "Мгновенное переключение аккаунтов (куки + localStorage), менеджер прокси с проверкой и авто-резервом, правила по сайтам, E2E-синхронизация между браузерами.",
+  "minimum_chrome_version": "116",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlc15FPohdjpT1t/CGD/hQzrfb9l2QtaEro5SQYqFO0vO5odrlh8H2DxvNb7Gi+yliMr5+HBfEOJkU76y7FHEelvnEPi0iVMbeW7O1F4QVDL9lTHo7K2AheHZH6LCyTmLzr4ne5Q4k6cTee/jyt6OxWiL9Yp7DVh1u7ZdqeDVUIUvy+D+zBkXOAeZ9Eu+mPyfmGYxMLAmoqRQe7KWkLnBRoLePoVQkQfvp1KMvFqBI/XhSnMBGOPGUG11Nwta8TbNlj6P3bAfIXfSjAnrZjDBmNrnCasp8v80uoMClcko4wFv7FDOmcnOAgU5stzypy1ZcPamf2M2Mv7CPqzKuBwePwIDAQAB",
+  "icons": {
+    "16": "icons/16.png",
+    "32": "icons/32.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "action": {
+    "default_popup": "ui/popup.html",
+    "default_title": "Multipass",
+    "default_icon": {
+      "16": "icons/16.png",
+      "32": "icons/32.png"
+    }
+  },
+  "options_ui": {
+    "page": "ui/dashboard.html",
+    "open_in_tab": true
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "permissions": [
+    "cookies",
+    "storage",
+    "unlimitedStorage",
+    "tabs",
+    "scripting",
+    "proxy",
+    "webRequest",
+    "webRequestAuthProvider",
+    "alarms",
+    "notifications",
+    "contextMenus",
+    "privacy",
+    "browsingData",
+    "favicon"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "incognito": "spanning",
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Alt+Shift+M"
+      },
+      "description": "Открыть Multipass"
+    },
+    "next-account": {
+      "suggested_key": {
+        "default": "Alt+Shift+S"
+      },
+      "description": "Следующий аккаунт на текущем сайте"
+    },
+    "rotate-proxy": {
+      "suggested_key": {
+        "default": "Alt+Shift+P"
+      },
+      "description": "Сменить прокси на следующий живой"
+    },
+    "toggle-proxy": {
+      "suggested_key": {
+        "default": "Alt+Shift+X"
+      },
+      "description": "Прокси: включить / выключить"
+    },
+    "clean-login": {
+      "description": "Чистый вход на текущем сайте (для нового аккаунта)"
+    }
+  }
+}

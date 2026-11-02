@@ -1,0 +1,55 @@
+html, body { width: 384px; }
+body.page { width: auto; display: grid; place-items: start center; padding: 16px; background: var(--bg2); }
+body.page #app { border: 1px solid var(--line); border-radius: 14px; overflow: hidden; box-shadow: var(--shadow); }
+#app { width: 384px; height: 580px; display: flex; flex-direction: column; background: var(--bg); }
+#hdr { display: flex; align-items: center; gap: 10px; padding: 11px 12px 9px; }
+#hdr .title { font-weight: 650; font-size: 13.5px; display: flex; gap: 7px; align-items: center; min-width: 0; }
+#hdr .sub { font-size: 11.5px; color: var(--muted); min-width: 0; }
+#tabs { display: flex; gap: 2px; padding: 0 10px; border-bottom: 1px solid var(--line); }
+#tabs button { flex: 1; border: 0; background: transparent; color: var(--muted); font: 550 12.5px var(--font); height: 34px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 6px; border-bottom: 2px solid transparent; margin-bottom: -1px; }
+#tabs button:hover { color: var(--text); }
+#tabs button.on { color: var(--text); border-bottom-color: var(--accent); }
+#tabs .count { font-size: 10.5px; background: var(--card2); border: 1px solid var(--line); color: var(--muted); padding: 0 5px; border-radius: 10px; line-height: 16px; }
+#main { flex: 1; overflow: auto; padding: 8px 8px 10px; }
+#bar { padding: 8px 10px; border-top: 1px solid var(--line); display: flex; gap: 8px; background: var(--bg); }
+#bar:empty { display: none; }
+#bar .btn { flex: 1; }
+#bar .btn.icon { flex: none; }
+#foot { padding: 6px 12px; border-top: 1px solid var(--line); font-size: 11.5px; color: var(--muted); display: flex; align-items: center; gap: 7px; background: var(--bg2); min-height: 32px; }
+#foot .btn { height: 22px; }
+.searchbar { padding: 2px 2px 8px; }
+.searchbar .input { height: 30px; }
+.site-head { display: flex; align-items: center; gap: 8px; padding: 4px 10px 6px; }
+.site-head .n { font-weight: 650; }
+.panel .card { padding: 11px 12px; }
+.panel .card > h3 { font-size: 13px; margin-bottom: 8px; }
+.ipbox { display: grid; grid-template-columns: auto 1fr; gap: 3px 10px; font-size: 12px; margin-top: 8px; }
+.ipbox .k { color: var(--faint); }
+details.card > summary { cursor: pointer; font-weight: 600; font-size: 12.5px; list-style: none; display: flex; align-items: center; gap: 7px; }
+details.card > summary::-webkit-details-marker { display: none; }
+details.card[open] > summary { margin-bottom: 9px; }
+.ck { padding: 7px 10px; }
+.ck .v { font: 11px var(--mono); color: var(--faint); }
+.ck .nm { font: 600 12px var(--mono); }
+.unlock { padding: 30px 22px; display: flex; flex-direction: column; gap: 12px; align-items: center; text-align: center; }
+.fav-star { color: var(--warn); fill: var(--warn); }
+/* Дерево «сайт → аккаунты» */
+.sect-title .cnt { font-size: 10.5px; letter-spacing: 0; text-transform: none; background: var(--card2); border: 1px solid var(--line); color: var(--muted); padding: 0 6px; border-radius: 10px; line-height: 16px; font-weight: 550; }
+.tree { display: flex; flex-direction: column; gap: 2px; }
+.sgroup { border-radius: 10px; }
+.sgroup + .sgroup { margin-top: 2px; }
+.sg-head { display: flex; align-items: center; gap: 8px; padding: 7px 8px 7px 6px; border-radius: 9px; cursor: pointer; min-width: 0; user-select: none; transition: background .1s; }
+.sg-head:hover { background: var(--hover); }
+.sg-head:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.sg-head .name { font-weight: 650; display: flex; align-items: center; gap: 6px; min-width: 0; }
+.sg-head .meta { font-size: 11.5px; color: var(--muted); display: flex; gap: 5px; align-items: center; min-width: 0; }
+.sg-head .btn { opacity: 0; transition: opacity .1s; }
+.sg-head:hover .btn, .sg-head:focus-within .btn { opacity: 1; }
+.sg-head .chev { color: var(--faint); transition: transform .15s; flex: none; }
+.sgroup.open > .sg-head .chev { transform: rotate(90deg); }
+.sgroup > .kids { display: none; margin: 1px 0 4px 15px; padding-left: 6px; border-left: 1px solid var(--line); }
+.sgroup.open > .kids { display: flex; }
+.sgroup.current { background: var(--bg2); border: 1px solid var(--line); padding-bottom: 2px; }
+.sgroup.current > .sg-head { cursor: default; }
+.sgroup.current > .sg-head .chev { display: none; }
+.sgroup.current > .kids { margin-left: 4px; padding-left: 0; border-left: 0; }
